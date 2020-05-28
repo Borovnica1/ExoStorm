@@ -1,0 +1,70 @@
+.testimonials {
+  background-color: $color-grey-light-1;
+
+  grid-column: full-start / full-end;
+  position: relative;
+  margin: 15rem 0;
+  padding: 4rem 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6rem;
+
+  &__title {
+    position: absolute;
+    left: 50%;
+    top: -7rem;
+    transform: translateX(-50%);
+
+    font-size: 2.7rem;
+    text-shadow: 1px 1px 9px black;
+    white-space: nowrap;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    grid-template-rows: 3rem min-content;
+  }
+
+  &__photo {
+    grid-row: 1 / span 2;
+
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all .2s;
+
+    &:hover {
+      filter: blur(2px);
+    }
+  }
+
+  &__name {
+    white-space: nowrap;
+  }
+
+  &__text {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    quotes: "\201C""\201D""\2018""\2019";
+    position: relative;
+
+
+    &::before {
+      content: open-quote;
+      font-size: 7rem;
+      position: absolute;
+      top: -40%;
+      left: -5%;
+    }
+
+    &::after {
+      content: close-quote;
+      font-size: 7rem;
+      position: absolute;
+      bottom: -77%;
+    }
+  }
+}

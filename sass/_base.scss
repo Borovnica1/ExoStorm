@@ -1,0 +1,52 @@
+// COLOR VARIABLES
+
+$color-primary: #6f0000;
+$color-primary-dark: #4b0000;
+
+$color-secondary: #00a1ab;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #3a3e54;
+$color-grey-dark-2: rgb(38, 42, 63);
+
+// FONT VARIABLES
+$font-primary: 'Roboto', sans-sarif;
+$font-display: Impact, Charcoal, sans-serif;
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-grey-dark-2;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  
+
+  display: grid;
+  grid-template-rows: 80vh repeat(2, min-content) 45vw repeat(3, min-content);
+  grid-template-columns: [full-start] minmax(7rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(7rem, 1fr) [full-end];
+
+
+}
+
+*:focus {
+  outline: none;
+}

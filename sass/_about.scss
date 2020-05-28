@@ -1,0 +1,126 @@
+.about {
+
+  &__pictures-left {
+    grid-column: full-start / col-start 2;
+    
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 90% 10%;
+      filter: brightness(.3);
+      transition: all .2s;
+
+      &:hover {
+        animation: move 2s infinite .2s;
+        filter: brightness(.9);
+      }
+    }
+
+    @keyframes move {
+      0%, 100% {
+        object-position: 90% 10%;
+      }
+
+      50% {
+        object-position: 10% 10%;
+      }
+    }
+  }
+  
+  &__content {
+    background-image: linear-gradient(rgba(rgb(0, 26, 110), 0.526),rgba(rgb(0, 26, 110), 0.526)),url(../img/headquarters.jpg);
+    background-size: cover;
+    grid-column: col-start 2 / col-end 7;
+
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: 1fr min-content min-content 1fr;
+    grid-row-gap: 2rem;
+    justify-items: center;
+    color: #fff;
+  }
+
+  &__btn {
+    align-self: start;
+
+    padding: 1rem 2.5rem;
+    font-size: 1.7rem;
+    text-decoration: none;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__text {
+    max-width: 53rem;
+    font-size: 1.6rem;
+  }
+
+  &__sponsors-text {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    grid-column-gap: 3rem;
+    color: rgba($color-grey-light-1, .7);
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+    }
+  }
+
+  &__sponsors-logos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+
+    & img {
+      width: 100px;
+      filter: grayscale(1);
+    }
+
+    // BMW LOGO SELECTOR
+    & > :nth-child(3) {
+      width: 42px;
+    }
+  }
+
+  &__pictures-right {
+    grid-column: col-end 7 / full-end;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 10% 90%;
+      filter: brightness(.3);
+      transition: all .2s;
+
+      &:hover {
+        animation: moveright 2s infinite .2s;
+        filter: brightness(.9);
+      }
+    }
+
+    @keyframes moveright {
+      0%, 100% {
+        object-position: 10% 90%;
+      }
+
+      50% {
+        object-position: 90% 90%;
+      }
+    }
+  }
+
+  
+}
