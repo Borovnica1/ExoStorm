@@ -2,6 +2,9 @@
 
   &__pictures-left {
     grid-column: full-start / col-start 2;
+    @media only screen and (max-width: $bp-medium) {
+      display: none; //and after this 1rem = 8px so everything is smaller
+    }
     
     & img {
       width: 100%;
@@ -32,6 +35,9 @@
     background-image: linear-gradient(rgba(rgb(0, 26, 110), 0.526),rgba(rgb(0, 26, 110), 0.526)),url(../img/headquarters.jpg);
     background-size: cover;
     grid-column: col-start 2 / col-end 7;
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end ;
+    }
 
     padding: 2rem;
     display: grid;
@@ -39,6 +45,14 @@
     grid-row-gap: 2rem;
     justify-items: center;
     color: #fff;
+  }
+
+  &__logo {
+    width: 80%;
+    
+    @media only screen and (max-width: $bp-large) {
+      width: 50%; //and after this 1rem = 8px so everything is smaller
+    }
   }
 
   &__btn {
@@ -86,16 +100,27 @@
     & img {
       width: 100px;
       filter: grayscale(1);
+
+      @media only screen and (max-width: $bp-large) {
+        width: 60%; //and after this 1rem = 8px so everything is smaller
+      }
     }
 
     // BMW LOGO SELECTOR
     & > :nth-child(3) {
       width: 42px;
+
+      @media only screen and (max-width: $bp-large) {
+        width: 32px; //and after this 1rem = 8px so everything is smaller
+      }
     }
   }
 
   &__pictures-right {
     grid-column: col-end 7 / full-end;
+    @media only screen and (max-width: $bp-medium) {
+      display: none; //and after this 1rem = 8px so everything is smaller
+    }
 
     & img {
       width: 100%;

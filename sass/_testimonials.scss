@@ -10,6 +10,14 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 6rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+  }
+  @media only screen and (max-width: $bp-small) {
+    margin: 5rem 0;
+    padding: 2rem;
+  }
+
   &__title {
     position: absolute;
     left: 50%;
@@ -25,6 +33,10 @@
     display: grid;
     grid-template-columns: .3fr 1fr;
     grid-template-rows: 3rem min-content;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column-gap: 1rem;
+    }
   }
 
   &__photo {
@@ -54,17 +66,14 @@
 
     &::before {
       content: open-quote;
-      font-size: 7rem;
-      position: absolute;
-      top: -40%;
-      left: -5%;
+      font-size: 2rem;
+      
     }
 
     &::after {
       content: close-quote;
-      font-size: 7rem;
-      position: absolute;
-      bottom: -77%;
+      font-size: 2rem;
+      
     }
   }
 }

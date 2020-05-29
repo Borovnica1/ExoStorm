@@ -77,10 +77,21 @@
     grid-column: 2 / 4;
     margin-top: 6rem;
 
+    @media only screen and (max-width: $bp-large) {
+      margin-top: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      height: 80%;
+      width: 80%;
+      margin: 3rem auto 0 auto;
+    }
+
     & img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      
     }
   }
 }
