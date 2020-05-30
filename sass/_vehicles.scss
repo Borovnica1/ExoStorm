@@ -37,13 +37,68 @@
 }
 
 .car {
-  background-color: $color-grey-light-1;
-  box-shadow: 1px 1px 25px black;
+  position: relative;
+  perspective: 150rem;
+  transition: all .4s;
+  height: 48rem;
 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 220px;
-  grid-row-gap: 2rem;
+
+  &__card {
+    background-color: $color-grey-light-1;
+    box-shadow: 1px 1px 25px black;
+  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 220px;
+    grid-row-gap: 2rem;
+
+    &-btn {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.7rem;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    &--front {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all .4s;
+      backface-visibility: hidden;
+      height: 100%;
+    }
+
+    &--back {
+      height: 100%;
+      width: 100%;
+      padding: 9rem 6rem;
+      background-image: linear-gradient(to bottom, rgba(#000, .7),rgba(#fff, .7)), url(../img/gal6.jpg);
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      backface-visibility: hidden;
+      transition: all .4s;
+      transform: rotateY(180deg);
+    }
+  }
+  
+  &:hover .car__card--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover .car__card--back {
+    transform: rotateY(0deg);
+  }
 
   &__icon {
     width: 3rem;
@@ -58,7 +113,7 @@
   }
   
 
-  & img {
+  &__card img {
     width: 100%;
     height: 100%;
     grid-column: 1 / span 2;
